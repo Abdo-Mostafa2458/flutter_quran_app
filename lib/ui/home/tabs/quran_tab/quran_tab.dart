@@ -262,14 +262,14 @@ class QuranTab extends StatelessWidget {
                             child:
                             Text(
                           AppLocalizations.of(context)!.verses_number,
-                          //--------------------------------------------
+                          //-----------------------------------------------
                           style: Theme.of(context).textTheme.labelMedium,
                           textAlign: TextAlign.center,
                         )),
                         Expanded(
                           child: Text(
                             AppLocalizations.of(context)!.chapter_name,
-                            //--------------------------------------------
+                            //----------------------------------------------
                             style: Theme.of(context).textTheme.labelMedium,
                             textAlign: TextAlign.center,
                           ),
