@@ -28,7 +28,7 @@ class _TasbehTabState extends State<TasbehTab> {
           alignment: Alignment.topCenter,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 10, right: 8, left: 50),
+              margin: EdgeInsets.only(top: 11, right: 8, left: 50),
               child: Image.asset(
                   getImagePathByName(imageName: 'head of seb7a_light.png')),
             ),
