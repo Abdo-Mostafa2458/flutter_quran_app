@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_c11_friday/ui/home/tabs/quran_tab/sura_title_widget.dart';
 import 'package:islami_c11_friday/utils/image_utils.dart';
 
@@ -260,22 +261,19 @@ class QuranTab extends StatelessWidget {
                         Expanded(
                             child:
                             Text(
-                              "عدد الآيات",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
-                            )
-                        ),
-                        // const SizedBox(
-                        //   height: 20,
-                        //   child: VerticalDivider(color: Color(0xFFB7935F),thickness: 2,),
-                        // ),
+                          AppLocalizations.of(context)!.verses_number,
+                          //-----------------------------------------------
+                          style: Theme.of(context).textTheme.labelMedium,
+                          textAlign: TextAlign.center,
+                        )),
                         Expanded(
-                            child: Text(
-                              "اسم السورة",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
-
-                            )),
+                          child: Text(
+                            AppLocalizations.of(context)!.chapter_name,
+                            //----------------------------------------------
+                            style: Theme.of(context).textTheme.labelMedium,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
                       ],
                     ),
                     Divider(color:  Theme.of(context).dividerColor,thickness: 2,),
