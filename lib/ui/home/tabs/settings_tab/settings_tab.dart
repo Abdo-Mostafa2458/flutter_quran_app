@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_c11_friday/providers/settings_provider/settings_provider.dart';
 import 'package:islami_c11_friday/ui/home/tabs/settings_tab/language_bottom_sheet.dart';
 import 'package:islami_c11_friday/ui/home/tabs/settings_tab/theme_bottom_sheet.dart';
+import 'package:provider/provider.dart';
 
 class SettingsTab extends StatefulWidget {
   @override
@@ -11,6 +13,7 @@ class SettingsTab extends StatefulWidget {
 class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -30,7 +33,9 @@ class _SettingsTabState extends State<SettingsTab> {
                     border: Border.all(
                         color: Theme.of(context).dividerColor, width: 3)),
                 child: Text(
-                  AppLocalizations.of(context)!.light,
+                  provider.currentTheme == ThemeMode.light
+                      ? AppLocalizations.of(context)!.light
+                      : AppLocalizations.of(context)!.dark,
                   style: Theme.of(context).textTheme.labelSmall,
                 )),
           ),
@@ -47,7 +52,10 @@ class _SettingsTabState extends State<SettingsTab> {
                     borderRadius: BorderRadius.circular(18),
                     border: Border.all(
                         color: Theme.of(context).dividerColor, width: 3)),
-                child: Text(AppLocalizations.of(context)!.english,
+                child: Text(
+                    provider.currentLang == 'en'
+                        ? AppLocalizations.of(context)!.english
+                        : AppLocalizations.of(context)!.arabic,
                     style: Theme.of(context).textTheme.labelSmall)),
           )
         ],

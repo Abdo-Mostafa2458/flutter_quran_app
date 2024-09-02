@@ -24,7 +24,8 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
                 provider.changeAppLanguage('en');
               },
               child: provider.currentLang == 'en'
-                  ? buildSelectedThemeItem(AppLocalizations.of(context)!.english)
+                  ? buildSelectedThemeItem(
+                      AppLocalizations.of(context)!.english)
                   : buildUnSelectedThemeItem(
                       AppLocalizations.of(context)!.english)),
           SizedBox(
